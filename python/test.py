@@ -144,36 +144,67 @@
 # for i in range(N):
 #     print(people[i][0], people[i][1])
 
-import sys
+# import sys
 
-N = int(input())
-N_list = list(map(int, sys.stdin.readline().split()))
-M = int(input())
-M_list = list(map(int, sys.stdin.readline().split()))
+# N = int(input())
+# N_list = list(map(int, sys.stdin.readline().split()))
+# M = int(input())
+# M_list = list(map(int, sys.stdin.readline().split()))
 
-result = [0] * M
-for i in range(M):
-    for j in range(N):
-        if (M_list[j] == N_list[i]):
-            result[j] += 1
-    print(result[j])
+# result = [0] * M
+# for i in range(M):
+#     for j in range(N):
+#         if (M_list[j] == N_list[i]):
+#             result[j] += 1
+#     print(result[j])
 
-n = int(input())
-arr1 = list(map(int, input().split()))
+# n = int(input())
+# arr1 = list(map(int, input().split()))
 
-dict1 = dict()
+# dict1 = dict()
 
-for i in arr1:
-    if i in dict1:
-        dict1[i] += 1
-    else:
-        dict1[i] = 1
+# for i in arr1:
+#     if i in dict1:
+#         dict1[i] += 1
+#     else:
+#         dict1[i] = 1
 
-m = int(input())
-arr2 = list(map(int, input().split()))
+# m = int(input())
+# arr2 = list(map(int, input().split()))
 
-for i in arr2:
-    if i in dict1:
-        print(dict1[i], end=' ')
-    else:
-        print(0, end=' ')
+# for i in arr2:
+#     if i in dict1:
+#         print(dict1[i], end=' ')
+#     else:
+#         print(0, end=' ')
+
+
+# 방법 1. 프로그래머스 문제 numbers의 배열이 number에 존재하면 빼야함, numbers에 없는 0~9의 숫자만 더해서 출력
+# number안에 numbers가 존재하면 전부 remove -> for in
+# 나머지값 반복문으로 출력
+# numbers = [1,2,3,4,5,6,7,8,0]
+# def solution(numbers):
+#     result = 0
+#     number = [0,1,2,3,4,5,6,7,8,9]
+#     for i in numbers:
+#         if i in number:
+#             number.remove(i)
+#     for j in range(len(number)):
+#         result += number[j]
+#     return result
+# print(solution(numbers))
+
+# 방법 2.
+# remove한 값을 전부 더해줌
+# 0~9를 더한 45에서 빼줌
+# def solution(numbers):
+#     answer = 45
+#     result = 0
+#     number = [0,1,2,3,4,5,6,7,8,9]
+#     for i in numbers:
+#         for j in number:
+#             if i == j:
+#                 number.remove(j)
+#                 break
+#         result += j
+#     return answer - result
