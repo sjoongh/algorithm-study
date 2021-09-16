@@ -7,6 +7,6 @@ def solution(s):
             s_list[i] = s_list[i].upper()
         elif i % 2 == 1:
             s_list[i] = s_list[i].lower()
-    s="",join(s_list)
+    s="".join(s_list)
     answer = " ".join(s)
     return answer
