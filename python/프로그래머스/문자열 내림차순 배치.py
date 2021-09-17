@@ -9,5 +9,5 @@ def solution(s):
     for j in ascii:
         ascii_list.append(chr(j))
     ascii_list="".join(ascii_list)
-    
+
     return ascii_list
