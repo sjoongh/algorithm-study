@@ -27,7 +27,6 @@ def solution(n, m):
     # n값에는 최소공배수의 값이 들어있음
     return [n, a*b/n]
 
-
 # GCD(최대공약수) --> GCD(B, A%B) if A%B = 0, GCD=B else GCD(B, A%B)
 # LCM(최소공배수) --> (A*B) / GCD
 # 방법2는 위의 방법을 재귀로 설정해 반복문을 안돌린 것
