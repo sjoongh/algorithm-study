@@ -13,11 +13,6 @@ N, M = map(int, sys.stdin.readline().split())
 tree = list(map(int, sys.stdin.readline().split()))
 start, end = 1, max(tree)
 
-# 4 7
-# 20 15 10 17
-# 20 -10 = 10
-# start += 1
-# start와 end가 비슷해질 때 까지
 while start <= end:
     mid = (start+end) // 2
     count = 0
@@ -26,10 +21,12 @@ while start <= end:
         if i >= mid:
             # count에 현재값-중간값
             count += i - mid
+            # 시간초과에 걸리지 않기 위해 count가 M값보다 커지면 반복문 종료
+            if count > M:
+                break
     #벌목 높이를 이분탐색
     if count >= M:
         start = mid + 1
     else:
         end = mid - 1
 print(end)
-
