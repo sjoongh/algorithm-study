@@ -13,8 +13,9 @@ N, M = map(int, sys.stdin.readline().split())
 tree = list(map(int, sys.stdin.readline().split()))
 start, end = 1, max(tree)
 
+# 조건을 만족하는 값 찾아서 탈출후 출력
 while start <= end:
-    mid = (start+end) // 2
+    mid = (start+end) // 2 # 위치 기반으로 찾음
     count = 0
     for i in tree:
         # tree의 i 값이 mid보다 큰 경우만
@@ -22,11 +23,13 @@ while start <= end:
             # count에 현재값-중간값
             count += i - mid
             # 시간초과에 걸리지 않기 위해 count가 M값보다 커지면 반복문 종료
-            if count > M:
+            # 찾아야하는 조건과 값이 같아야 하므로 >=
+            if count >= M:
                 break
-    #벌목 높이를 이분탐색
+    # 벌목 높이를 이분탐색
+    # start와 end의 범위를 좁혀가며 탐색
     if count >= M:
-        start = mid + 1
+        start = mid + 1 # 찾아야하는 값 아래에 있는 경우
     else:
-        end = mid - 1
+        end = mid - 1 # 찾아야하는 값 위에 있는 경우
 print(end)
