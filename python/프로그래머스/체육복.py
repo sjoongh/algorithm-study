@@ -5,7 +5,7 @@ def solution(n, lost, reserve):
     reserve_n = list(set(reserve) - set(lost))
     lost_n = list(set(lost) - set(reserve))
 
-    answer = 전체 - 잃어버린 체육복 + 빌려준 체육복
+    # answer = 전체 - 잃어버린 체육복 + 빌려준 체육복
     answer = n - len(lost_n)
     # lost_n의 list 요소를 for문으로 출력
     for i in lost_n:
