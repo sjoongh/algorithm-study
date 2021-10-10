@@ -1,18 +1,11 @@
 def solution(sizes):
     answer = 0
-    x = []
-    y = []
-    x_num = 0
-    y_num = 0
-    for i in range(len(sizes)):
-        x.append(sizes[i][0])
-        y.append(sizes[i][1])
-    x_num = max(x)
-    y_num = max(y)
-    for j in range(len(sizes)):
-        if x_num < sizes[i][1]:
-          x_num = sizes[i][0]
-        elif y_num < sizes[i][0]:
-            y_num = sizes[i][1]
-    answer = x_num * y_num
+    change_sizes = []
+    for i in sizes:
+        if i[0] < i[1]:
+            i[0], i[1] = i[1], i[0]
+        change_sizes.append(i)
+    width = [j[0] for j in change_sizes]
+    height = [k[1] for k in change_sizes]
+    answer = max(width) * max(height)
     return answer
