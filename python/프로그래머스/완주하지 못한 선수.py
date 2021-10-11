@@ -1,4 +1,4 @@
-# # 완주하지 못한 선수
+# 완주하지 못한 선수
 def solution(participant, completion):
     participant_set = set(participant)
     completion_set = set(completion)
