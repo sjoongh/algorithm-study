@@ -7,6 +7,6 @@ def solution(N, stages):
             c = stages.count(i)
             dic[i] = c / num
             num -= c
-        else:
+        else: 
             dic[i] = 0
     return sorted(dic, key = lambda x: dic[x], reverse = True)
