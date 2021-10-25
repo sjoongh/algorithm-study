@@ -7,6 +7,7 @@ def solution(numbers, target):
     queue.append([numbers[0],0])
     queue.append([-1*numbers[0],0])
     while queue:
+        # pop이 없으면 조건문으로  3인 경우 체크하면 될듯
         tmp, idx = queue.popleft()
         idx += 1
         if idx < n:
@@ -19,7 +20,7 @@ def solution(numbers, target):
 
 # dfs방식
 def solution(numbers, target):
-    # tree는 이전수에 대한 계산 결과를 담은 층
+    # tree는 이전 수에 대한 계산 결과를 담은 층
     tree = [0]
     # 숫자 목록을 하나씩 꺼내와 주는 역할
     for num in numbers:
@@ -30,4 +31,5 @@ def solution(numbers, target):
             sub_tree.append(tree_num - num)
         # sub_tree는 현재 숫자에 대한 결과를 담은 자식 노드를 하나씩 추가
         tree = sub_tree
+    # target이 3인 경우 모두 return
     return tree.count(target)
