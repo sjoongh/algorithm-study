@@ -60,45 +60,6 @@
 
 # print(solution(1, 30))
 
-# stack 문제 -------------------
-
-# .split(문자열 나누기) 공백을 기준으로 나눠줌
-# .split()를 하면 자동으로 list type이 된다
-
-# import sys
-# N = int(sys.stdin.readline())
-# stack = []
-
-# # for 문의 변수를 특별히 사용하지 않을때 _ 사용
-
-# for _ in range(N):
-#     word = sys.stdin.readline().split()
-#     order = word[0]
-
-#     if order == "push":
-#         value = word[1]
-#         stack.append(value)
-#     elif order == "pop":
-#         if len(stack) == 0:
-#             print(-1)
-#         else:
-#             print(stack.pop())
-#     elif order == "size":
-#         if len(stack) != 0:
-#             print(len(stack))
-#         else:
-#             print(0)
-#     elif order == "top":
-#         if len(stack) == 0:
-#             print(-1)
-#         else:
-#             print(stack[-1])
-#     elif order == "empty":
-#         if len(stack) == 0:
-#             print(1)
-#         else:
-#             print(0)
-
 # queen
 # 인덱스가 행의 값이고 row[index]의 값이 열의 값이다.
 # def queen(x): # x와 i가 같으면 행이 같음, but for문을 보면 x와 i가 같을 수 없다
