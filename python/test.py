@@ -208,5 +208,3 @@
 #                 break
 #         result += j
 #     return answer - result
-
-import sys input = sys.stdin.readline N = int(input()) # 번호판 수 for _ in range(N) : alpha, temp = input().split("-") num = int(temp) alpha_num = 0 for i in range(3) : alpha_num += (ord(alpha[i])-65) * 26**(2-i) if abs(alpha_num-num) <= 100 : print("nice") else : print("not nice")
