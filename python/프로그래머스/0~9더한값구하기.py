@@ -11,7 +11,7 @@ def solution(numbers):
     for j in range(len(number)):
         result += number[j]
     return result
-print(solution(numbers))
+# print(solution(numbers))
 
 # 방법 2.
 # remove한 값을 전부 더해줌
