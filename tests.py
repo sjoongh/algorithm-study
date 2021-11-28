@@ -31,3 +31,7 @@ else:
 
 N, X = map(int, input().split(" ")) 
 ARR = list(map(int, input().split(" ")))
+
+N = int(input()) 
+PAPER = [list(map(int, input().split(" "))) 
+for i in range(N)]
