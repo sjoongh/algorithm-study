@@ -27,3 +27,7 @@ if tmp == False:
 else:
     for i in op:
         print(i)
+
+
+N, X = map(int, input().split(" ")) 
+ARR = list(map(int, input().split(" ")))
