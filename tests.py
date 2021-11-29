@@ -27,8 +27,11 @@ if tmp == False:
 else:
     for i in op:
 <<<<<<< HEAD
+<<<<<<< HEAD
         print(i)
 =======
+=======
+>>>>>>> 35ad008d00c2c58e94e38735f54a1f15d1d011a8
         print(i)
 
 
@@ -38,4 +41,7 @@ ARR = list(map(int, input().split(" ")))
 N = int(input()) 
 PAPER = [list(map(int, input().split(" "))) 
 for i in range(N)]
+<<<<<<< HEAD
+>>>>>>> 35ad008d00c2c58e94e38735f54a1f15d1d011a8
+=======
 >>>>>>> 35ad008d00c2c58e94e38735f54a1f15d1d011a8
