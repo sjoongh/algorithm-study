@@ -8,3 +8,18 @@ def solution(n):
     # n번째 수를 1234567로 나누어야함
     answer = a%1234567
     return answer
+
+
+# 재귀함수를 사용한 피보나치, 시간효율이 안 좋음
+# def F(n):
+#     if n < 2:
+#         return n
+#     else:
+#         return F(n-1) + F(n-2)
+
+# def solution(n):
+#     answer = 0
+#     for i in range(n):
+#         answer = F(n)
+#     answer %= 1234567
+#     return answer    
