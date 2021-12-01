@@ -10,6 +10,7 @@ def solution(skill, skill_trees):
                 # 틀렸으므로 break, 아닐경우는 answer += 1
                 if j != skill_li.pop(0):
                     break
-            else:
-                answer += 1
+        # for-else문, break에 걸리지 않고 for문을 나오면 else문으로 들어옴
+        else:
+            answer += 1
     return answer
