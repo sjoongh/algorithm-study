@@ -13,29 +13,32 @@ def solution(n):
 
 # 방법 2. 
 # 재귀함수를 사용한 피보나치, 시간효율이 안 좋음
-# def F(n):
-#     if n < 2:
-#         return n
-#     else:
-#         return F(n-1) + F(n-2)
+def F(n):
+    if n < 2:
+        return n
+    else:
+        return F(n-1) + F(n-2)
 
-# def solution(n):
-#     answer = 0
-#     for i in range(n):
-#         answer = F(n)
-#     answer %= 1234567
-#     return answer
+def solution(n):
+    answer = 0
+    for i in range(n):
+        answer = F(n)
+    answer %= 1234567
+    return answer
 
 
 # 방법 3.
 # 방법1보다는 직관적 방법
-# def solution(n):
-#     answer = []
-#     for i in range(n+1):
-#         if i==0 or i==1:
-#             answer.append(i)
-#         else:
-#             f = answer[i-1] + answer[i-2]
-#             answer.append(f % 1234567)
-
-#     return answer[-1]
+def solution(n):
+    answer = []
+    for i in range(n+1):
+        # 2이하의 숫자 처리
+        if i==0 or i==1:
+            answer.append(i)
+        else:
+            # 피보나치 구현
+            f = answer[i-1] + answer[i-2]
+            # answer에 append할때 애초에 나눠서 넣어줌
+            answer.append(f % 1234567)
+    # answer의 마지막값이 결과이므로 마지막값 return
+    return answer[-1]
