@@ -1,3 +1,4 @@
+# TODO : 시간복잡도와 메모리 생각해서 다시 풀어보기
 def solution(bridge_length, weight, truck_weights):
     answer = 0
     # bridge는 다리의 길이를 표현하는 동시에 트럭이 지나가는 다리역할과 while문이 돌아가는 루프로 만듬
