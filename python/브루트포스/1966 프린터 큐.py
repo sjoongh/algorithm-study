@@ -27,9 +27,9 @@ for _ in range(num):
             if find[0] == 'target':
                 print(order)
                 break
-            else:
+            else: # 현재 가장 큰 수가 target이 아닐경우 pop으로 뽑아냄
                 n_li.pop(0)
                 find.pop(0)
-        else:
+        else: # max값을 찾을때까지 현재값을 뽑은뒤 뒤에 추가
             n_li.append(n_li.pop(0))
             find.append(find.pop(0))
