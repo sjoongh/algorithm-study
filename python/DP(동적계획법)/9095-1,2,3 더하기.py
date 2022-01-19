@@ -10,9 +10,7 @@ for i in range(3, 10):
     num.append(num[i-3] + num[i-2] + num[i-1])
 for _ in range(t):
     n = int(input())
-    print(num[n-1])
-
-
+    print(num[n-1]) # 마지막값 출력
 
 # 방법 2.
 T = int(input())
