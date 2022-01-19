@@ -1,6 +1,6 @@
 n = int(input())
 
-dp = [0 for _ in range(n+1)]
+dp = [0] * 1001
 
 if n <= 3:
     print(n)
