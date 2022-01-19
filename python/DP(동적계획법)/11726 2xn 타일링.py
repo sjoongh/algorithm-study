@@ -1,3 +1,4 @@
+# solution 1
 n = int(input())
 
 dp = [0] * 1001
@@ -13,6 +14,7 @@ else:
     print(dp[i]% 10007)
 
 
+# solution 2
 T = int(input())
 
 dp = [0] * 1001
