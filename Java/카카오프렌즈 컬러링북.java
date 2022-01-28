@@ -64,7 +64,6 @@ class Solution {
         // 15. 각 값을 answer 배열에 담아주고 끝.
         answer[0] = numberOfArea;
         answer[1] = maxSizeOfOneArea;
-        ㄴ
         return answer;
     }
 }
