@@ -7,6 +7,9 @@ public class 백준 9020 {
         int test = 0;
         for (int i = 0; i < t; i++) {
             test = sc.nextInt();
+            if (i == test) {
+                test = t;
+            }
         }
     }
 }
