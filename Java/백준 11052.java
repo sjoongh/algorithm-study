@@ -21,9 +21,8 @@ public class Main {
             for (int j = 1; j <= i; j++) { // i의 크기만큼 돌아가도록
                 // result의 현재값에는 arr의 최대 값이 출력
                 result[i] = Math.max(result[i], result[i - j] + arr[j]);
-                result[i] = Math.max(result[i], )
             }
         }
-
+        System.out.println(result[n]);
     }
 }
