@@ -9,7 +9,7 @@ public class Main {
       StringTokenizer stringTokenizer;
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	  Scanner sc = new Scanner(System.in);
-      
+    
       int cnt = Integer.parseInt(br.readLine());
   
       for(int i = 0; i < cnt; i++) {
