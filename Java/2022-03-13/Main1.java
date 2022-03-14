@@ -17,6 +17,7 @@ public class Solution {
 		}
 		System.out.println(arr);
 		
+		// new String(char배열변수, 시작값, 배열길이) --> new String(char배열변수)만 해도 전부 String type으로 바뀜
 		return new String(arr); // char --> String 인스턴스 생성
 	}
 	
