@@ -29,9 +29,9 @@ class Solution {
         dp = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                dp[i][j] = Integer.MIN_VALUE;
+                dp[i][j] = Integer.MIN_VALUE; // int정수의 최소범위 집어넣음
             }
-            if (i % 2 == 0) dp[i][i] = Integer.parseInt(arr[i]);
+            if (i % 2 == 0) dp[i][i] = Integer.parseInt(arr[i]); // 2로 나누어질 경우 
         }
         return maxvalue(arr, 0, n-1);
     }
