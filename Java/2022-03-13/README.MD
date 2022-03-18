@@ -1,5 +1,6 @@
 **복기 1.**
-<br />**문제 : S(string)을 interval에 적힌 숫자에 따라 해당 인덱스를 변경하는 문제**
+<br />
+**문제 : S(string)을 interval에 적힌 숫자에 따라 해당 인덱스를 변경하는 문제**
 
 S : abcde
 interval : [ [1,3], [1,4], [2,5] ]
