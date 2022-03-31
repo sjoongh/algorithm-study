@@ -14,7 +14,7 @@ public class Main {
     	n = Integer.parseInt(br.readLine());
     	arr = new int[n];
     	result = new int[n];
-    	visit = new boolean[n]; // 초기값 false임
+    	visit = new boolean[n]; // 초기값 false
 
     	for (int i=0; i < n; i++) {
     		arr[i] = i;
@@ -28,17 +28,13 @@ public class Main {
             }
             System.out.println();
         } else {
-        	System.out.println("재귀 시작점");
         for(int i = 0; i < n; i++) {
-        	System.out.println(i+" for문 동작");
             if(!visit[i]) {
                 visit[i] = true;
                 result[depth] = arr[i];
                 print(depth+1);
                 visit[i] = false;
-                System.out.println("재귀 빠져나옴");
             }
-            System.out.println("재귀 for문 끝단");
         }
         }
     } 
