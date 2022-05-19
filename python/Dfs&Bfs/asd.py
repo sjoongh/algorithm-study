@@ -115,7 +115,7 @@ N, M, V = map(int, sys.stdin.readline().split())
 graph = [[0] * (N+1) for _ in range(N+1)]
 visited = [False] * (N+1)
 
-for _ in range(M): # 간선 길이만 
+for _ in range(M): # 간선 길이만큼 
     x, y = map(int, sys.stdin.readline().split())
     graph[x][y] = 1
     graph[y][x] = 1
