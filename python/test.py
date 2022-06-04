@@ -81,21 +81,6 @@
 # for i in range(N):
 #     print(people[i][0], people[i][1])
 
-# AMC 호텔
-# T = int(input())
-
-# for _ in range(T):
-#     H, W, N = map(int, input().split())
-#     floor = 0
-#     room = 0
-#     if N % H == 0:
-#         floor = H * 100
-#         room = N // H
-#     else:
-#         floor = (N % H) * 100
-#         room = 1 + N // H
-#     print(floor + room)
-
 # import sys
 # N = int(sys.stdin.readline())
 # # 1. []로 배열하나 생성해놓음
