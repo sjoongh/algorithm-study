@@ -11,3 +11,5 @@ def solution(lottos, win_nums):
     zero = lottos.count(0)  # 0이있으면 count
     # cnt+zero와 cnt가 0이 될 경우 1로 바꿈
     return [7-max(cnt+zero, 1), 7-max(cnt, 1)]
+
+print(solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
