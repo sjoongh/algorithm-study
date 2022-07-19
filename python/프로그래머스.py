@@ -1,6 +1,3 @@
-
-# print(solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
-
 # 로또 방법 2
 # def solution(lottos, win_nums):
 #     rank=[6,6,5,4,3,2,1]
