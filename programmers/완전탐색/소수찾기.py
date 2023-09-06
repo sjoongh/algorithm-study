@@ -1,52 +1,36 @@
-# 문제 설명
-# 한자리 숫자가 적힌 종이 조각이 흩어져있습니다. 흩어진 종이 조각을 붙여 소수를 몇 개 만들 수 있는지 알아내려 합니다.
-#
-# 각 종이 조각에 적힌 숫자가 적힌 문자열 numbers가 주어졌을 때, 종이 조각으로 만들 수 있는 소수가 몇 개인지 return 하도록 solution 함수를 완성해주세요.
-#
-# 제한사항
-# numbers는 길이 1 이상 7 이하인 문자열입니다.
-# numbers는 0~9까지 숫자만으로 이루어져 있습니다.
-# "013"은 0, 1, 3 숫자가 적힌 종이 조각이 흩어져있다는 의미입니다.
-# 입출력 예
-# numbers	return
-# "17"	3
-# "011"	2
-# 입출력 예 설명
-# 예제 #1
-# [1, 7]으로는 소수 [7, 17, 71]를 만들 수 있습니다.
-#
-# 예제 #2
-# [0, 1, 1]으로는 소수 [11, 101]를 만들 수 있습니다.
-#
-# 11과 011은 같은 숫자로 취급합니다.
-# 123, 321, 213(x)
-# sort 이후 반복문 돌리고 역방향 & 정방향
-# ----------------
-# 1, 7, 17, 71
-# 조합 & 소수인지 확인
-
 import itertools
 
+# 에라토스테네스의 체 구현
 def findNumber(num):
-    count = 0
     isTrue = True
-    for i in range(1, len(num)+1):
-        if i % 2 == 0:
-            count += 1
-        if count > 2:
+    if int(num) == 0:
+        isTrue = False
+    # 시간초과 때문에 소수 판별 알고리즘 사용
+    # num의 최대 약수가 int(num ** 0.5)이하이기 때문에 사용
+    # +1은 자기 자신까지 검사하기 위함임
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
             isTrue = False
             break
     return isTrue
 
 def solution(numbers):
-    test = list(map(int, numbers))
-    test.sort()
-    print(test)
+    num = list(map(str, numbers))
+    num.sort()
 
+    answer = 0
+    num_list = []
+    num_list2 = []
     for i in range(1, len(numbers)+1):
-        test2 = itertools.permutations(test, i)
-        test2 = ','.join(str(test2))
-        print(list(test2))
+        num_list += list(itertools.permutations(num, i))
+        for j in num_list:
+            num_list2.append(int("".join(j)))
 
-    return 0
-print(solution("713"))
+    for k in set(num_list2):
+        if k < 2:
+            continue
+        check = True
+        check = findNumber(k)
+        if check:
+            answer += 1
+    return answer
