@@ -6,7 +6,7 @@ def findNumber(num):
     if int(num) == 0:
         isTrue = False
     # 시간초과 때문에 소수 판별 알고리즘 사용
-    # num의 최대 약수가 int(num ** 0.5)이하이기 때문에 사용
+    # num의 최대 약수가 int(num ** 0.5)이하이기 때문에 사용 -> 제곱근으로 활용하기 위해서 **을 사용
     # +1은 자기 자신까지 검사하기 위함임
     for i in range(2, int(num ** 0.5) + 1):
         if num % i == 0:
