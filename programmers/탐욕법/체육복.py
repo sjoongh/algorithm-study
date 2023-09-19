@@ -26,40 +26,13 @@
 #
 # 예제 #2
 # 3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.
-# ---------------------------------------
-# 배열을 돌면서 lost에 해당하는 숫자 +1 -1의 숫자가 reserve에 존재한다면 --> 0으로 변환하거나 구분값을 넣어줘서 빌려줌
-# -> lost에 존재하는 숫자를 제외한 값을 전체에서 뺌
 
 def solution(n, lost, reserve):
-    lost = list(set(lost))
-    reserve = list(set(reserve))
-    count = 0
-    for i in range(len(lost)):
-        if lost[i] -1 in reserve:
-            reserve.remove(lost[i]-1)
-            lost[i] = 0
-        elif lost[i] +1 in reserve:
-            reserve.remove(lost[i]+1)
-            lost[i] = 0
-    print(lost)
-    print(reserve)
-    for i in lost:
-        if i > 0:
-            count += 1
-    return count
-
-print(solution(5, [2,4], [1,3,5]))
-
-
-# def solution(n, lost, reserve):
-#     lost = list(set(lost))
-#     reserve = list(set(reserve))
-#     count = 0
-#     for i in range(len(lost)):
-#         if lost[i] -1 in reserve:
-#             count += 1
-#             reserve.remove(lost[i]-1)
-#         elif lost[i] +1 in reserve:
-#             count += 1
-#             reserve.remove(lost[i]+1)
-#     return count
+    new_lost = list(set(lost) - set(reserve))
+    reserve = list(set(reserve) - set(lost))
+    for i in reserve:
+        if i-1 in new_lost:
+            new_lost.remove(i-1)
+        elif i+1 in new_lost:
+            new_lost.remove(i+1)
+    return n - len(new_lost)
