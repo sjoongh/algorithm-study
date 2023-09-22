@@ -39,10 +39,10 @@ def solution(name):
     alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     answer = 0
     name = list(name)
-    if alphabet.index(name[-1]) > 13:
+    if alphabet.index(name[-1]) > 14:
         answer += (len(alphabet) - alphabet.index(name[-1]))+1
     else:
-        if alphabet.index(name[-1]) == 13:
+        if alphabet.index(name[-1]) == 14:
             answer += alphabet.index(name[-1])+1
         else:
             answer += alphabet.index(name[-1])
