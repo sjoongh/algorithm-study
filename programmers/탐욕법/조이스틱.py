@@ -26,35 +26,27 @@
 # "JAN"	23
 
 #---------------------------------------------
-# TODO : solution check
-# 1. 아스키코드 변환 후 구하기
-# 2. 알파벳 배열 만들고 구하기
-# "JAZ" 11
-# J = 9, A = 0, Z = 2
-# "JEROEN"	56
-# j = 9, E = 4, R = 10, O = 13, E = 4, N = 14 -> 54
-# "JAN"	23
-# J = 9, A = 0, N = 14
-# 현재 위치가 어디인지에 따라 조이스틱으로 위치를 판별
+# FIXME : 문제 풀이를 이상하게 했음 -> 커서 위치에 따라 A의 길이가 가장 짧은 문자열로 이동해야함
 def solution(name):
-    alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     answer = 0
-    name = list(name)
-    if alphabet.index(name[-1]) > 14:
-        answer += (len(alphabet) - alphabet.index(name[-1]))+1
-    else:
-        if alphabet.index(name[-1]) == 14:
-            answer += alphabet.index(name[-1])+1
-        else:
-            answer += alphabet.index(name[-1])
-    for i in range(1, len(name)):
-        if alphabet.index(name[i-1]) > 13:
-            answer += (len(alphabet) - alphabet.index(name[i-1]))+2
-        else:
-            if alphabet.index(name[i-1]) == 13:
-                answer += alphabet.index(name[i-1])+1
-            else:
-                answer += alphabet.index(name[i-1])
-    return answer
+    # 1. 이전 커서 이동 값 ( 초기값 - 이름의 길이 - 1 )
+    min_move = len(name) - 1
+    # enumerate()로 리스트 -> 튜플로 변환해서 인덱스, 원소로 반복문 돌림
+    for i, char in enumerate(name):
+        # FIXME : 알파벳의 자리 찾는 작업 -> 기존에 구현했던 방법 -> 여기에 조이스틱 무브를 count해서 추가해야함
+        answer += min(ord(char) - ord('A'), ord('Z') - ord(char) + 1)
 
-print(solution("JAZ"))
+        next = i + 1
+        while next < len(name) and name[next] == 'A':
+            next += 1
+
+        # 2. 기존 방식 -> A를 고려하지 않는 방식
+        # 3. 연속된 A의 왼쪽 시작(연속된 A의 왼쪽 부분이 문자열 길이가 짧을경우)
+        # -> 연속된 A의 왼쪽 부분을 커서가 두번 지나가기 때문에 2 * i를 하고 오른쪽 부분 len(name) -next을 더한 것
+        # 4. 연속된 A의 오른쪽 시작(연속된 A의 오른쪽 부분이 문자열 길이가 짧을경우)
+        # -> 연속된 A의 오른쪽 부분을 커서가 두번 지나가기 때문에 2 * i를 하고 왼쪽 부분 len(name) -next을 더한 것
+        # 5. 최소값 추출
+        min_move = min([ min_move, 2 * i + len(name) - next, i + 2 * (len(name) - next) ])
+    return answer + min_move
+
+print(solution("JAN"))
