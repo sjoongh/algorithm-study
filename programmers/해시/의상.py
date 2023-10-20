@@ -38,17 +38,22 @@
 # 2. blue_sunglasses
 # 3. smoky_makeup
 
-from collections import Counter
+#
+from collections import defaultdict
 
 def solution(clothes):
-    clothes_dic = Counter([clothe[1] for clothe in clothes])
-    print(clothes_dic)
+    # 의상의 종류별로 개수를 카운트
+    count_by_category = defaultdict(int)
+    for _, category in clothes:
+        count_by_category[category] += 1
 
-    count = 1
+    # 의상의 조합 수 계산
+    answer = 1
+    for count in count_by_category.values():
+        answer *= (count + 1)
 
-    for count_clothes in clothes_dic.values():
-        count = count*(count_clothes + 1)
+    # 아무 의상도 입지 않은 경우 제외
+    answer -= 1
 
-    return count-1
-
+    return answer
 print(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]))
