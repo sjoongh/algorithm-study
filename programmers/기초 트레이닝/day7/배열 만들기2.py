@@ -16,3 +16,13 @@
 # 입출력 예 #2
 
 # 10 이상 20 이하이면서 0과 5로만 이루어진 정수는 없습니다. 따라서 [-1]을 return 합니다.
+
+def solution(l, r):
+    answer = []
+    for i in range(l, r+1):
+        if str(i).count('0') == len(str(i)) or str(i).count('5') == len(str(i)) or str(i).count('0') + str(i).count('5') == len(str(i)):
+            answer.append(i)
+    if len(answer) == 0:
+        return [-1]
+
+    return answer
