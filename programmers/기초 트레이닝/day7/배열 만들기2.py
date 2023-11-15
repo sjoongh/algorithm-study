@@ -17,6 +17,28 @@
 
 # 10 이상 20 이하이면서 0과 5로만 이루어진 정수는 없습니다. 따라서 [-1]을 return 합니다.
 
+# 풀이 1.
+def solution(l, r):
+    answer = []
+    for i in range(l, r + 1):
+        if str(i).count('0') + str(i).count('5') == len(str(i)):
+            answer.append(i)
+    return answer
+
+print(solution(5, 555))
+
+# 풀이 2.
+def solution(l, r):
+    answer = []
+    for i in range(l, r + 1):
+        # 아래 로직 설명 : 53이 들어왔을 때 53을 str로 바꾸면 '53'이 되고 이걸 for문으로 돌리면 '5'와 '3'이 나옴 -> 이걸 all로 돌리면 5와 3이 all에 들어가서 False가 나옴 -> 그래서 53은 answer에 들어가지 않음
+        # 결과적으로 5와 0만 들어간 숫자만 True가 나옴
+        if all(j in ['0', '5'] for j in str(i)):
+            answer.append(i)
+    return answer
+
+print(solution(5, 555))
+
 def solution(l, r):
     answer = []
     for i in range(l, r+1):

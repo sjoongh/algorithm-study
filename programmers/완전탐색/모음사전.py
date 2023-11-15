@@ -34,6 +34,13 @@ def solution(word):
     answer = []
     li = ['A', 'E', 'I', 'O', 'U']
     for i in range(1,6):
+        # product(iterables, repeat=1)
+
+        # ABCD 중 2개의 요소로 나열할 수 있는 자기자신을 포함한 모든 경우의 수
+        # product('ABCD', repeat=2) --> AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
+        # product : 중복순열 - 한 개 이상의 리스트의 중복을 허용하고 모든 조합을 구할 때 사용
+        # permutaions : 순열 - 두 개 이상의 리스트의 중복을 허용하지 않고 모든 조합을 구할 때 사용
+        # combinations : 조합 - 두 개 이상의 리스트의 중복을 허용하지 않고 특정 수의 모든 조합을 구할 때 사용
         for per in product(li, repeat = i):
             answer.append(''.join(per))
     answer.sort()
