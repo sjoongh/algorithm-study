@@ -32,6 +32,6 @@ def solution(rank, attendance):
             # 이차원 배열에 담음
             answer.append((rank[i], i))
     answer.sort()
-    return answer
+    return 10000*answer[0][1]+100*answer[1][1]+answer[2][1]
 
 print(solution([3, 7, 2, 5, 4, 6, 1], [False, True, True, True, True, False, False]))
