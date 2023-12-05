@@ -60,3 +60,20 @@
 # xxx...xxx
 # xxx...xxx
 # 따라서 ["xxx...xxx", "xxx...xxx", "xxx...xxx", "...xxx...", "...xxx...", "...xxx...", "xxx...xxx", "xxx...xxx", "xxx...xxx"]를 return 합니다.
+
+"""
+뭐 이딴 문제가 다 있지 싶었다.
+어떻게 접근해야 할지 감이 안잡혔다.
+반복문 두번을 쓰는건 싫었는데 감이 안잡혀서 결국 사용했다..
+"""
+def solution(picture, k):
+    text = ""
+    answer = []
+    for i in picture:
+        for j in i:
+            text += j * k
+        for _ in range(k):
+            answer.append(text)
+    return answer
+
+print(solution(["x.x", ".x.", "x.x"], 3))
