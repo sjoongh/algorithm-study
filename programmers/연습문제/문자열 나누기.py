@@ -24,24 +24,45 @@
 # 입출력 예 #3
 # s="aaabbaccccabba"인 경우 aaabbacc - ccab - ba와 같이 분해됩니다.
 
-def solution(s):
-    answer = 0
-    x = s[0]
-    count_x = 1
-    count_other = 0
-    list_up = 1
-    end_count = 0
-    for i in s:
-        if count_x == count_other:
-            count_x = 1
-            count_other = 0
-            answer += 1
-            list_up = count_x + count_other + 1
-            x = s[count_x + count_other + 1]
-        if x == i:
-            count_x += 1
-        elif x != i:
-            count_other += 1
-    return answer
+# 같은 단어와 다른 단어가 나온 count 수가 일치해야 하는데
+# 분리하는 구분점을 찾기가 쉽지 않았다.
+# 가장 처음의 if문을 내가 생각한 이론상으로는 마지막에 배치해야
+# cnt1, cnt2를 초기화할 수 있었는데
+# if문을 가장 맨 앞에 배치시켜 다음 문자열 (i+1) 차례에
+# 이전의 cnt1, cnt2가 같은지를 먼저 비교하면 쉽게 처리할 수 있었다.
+# 문제에서 '만약 두 횟수가 다른 상태에서 더 이상 읽을 글자가 없다면, 역시 지금까지 읽은 문자열을 분리하고, 종료합니다.'라고 알려주었다.
+# 'aaabc'와 같이 끝까지 읽었을 때 isx=3, isnotx=2가 되어, 두 횟수가 다른 상태에서
+# 더 이상 읽을 문자열이 없으면 문자열을 분리한다는 것이므로 answer+1을 해 결과적으로 answer=1이 되어야 한다는 뜻이다.
+# 그러므로 answer를 먼저 +1 한 상태에서 isx, isnotx를 계산해도 결과는 달라지지 않는다.
+# TODO : 문제를 풀이할때 정말 이해가 가지 않는다면 손으로 직접 그려보고 풀이하는 습관을 들여보자!!
 
-print(solution("banana"))
+# TODO : 다시 풀어볼것
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# =================================================================================
+# def solution(s):
+#     answer = 0
+#     cnt1=0; cnt2=0
+#     for i in s:
+#         if cnt1==cnt2:
+#             answer+=1
+#             k=i
+#         if k==i:
+#             cnt1+=1
+#         else:
+#             cnt2+=1
+#
+#     return answer
