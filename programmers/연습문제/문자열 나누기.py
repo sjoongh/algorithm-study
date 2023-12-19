@@ -32,19 +32,16 @@ def solution(s):
     list_up = 1
     end_count = 0
     for i in s:
-        print(list_up)
-        for j in s[list_up::]:
-            if count_x == count_other:
-                count_x = 1
-                count_other = 0
-                answer += 1
-                list_up = count_x + count_other + 1
-                x = s[list_up + 1]
-                break
-            if x == j:
-                count_x += 1
-            elif x != j:
-                count_other += 1
+        if count_x == count_other:
+            count_x = 1
+            count_other = 0
+            answer += 1
+            list_up = count_x + count_other + 1
+            x = s[count_x + count_other + 1]
+        if x == i:
+            count_x += 1
+        elif x != i:
+            count_other += 1
     return answer
 
 print(solution("banana"))
