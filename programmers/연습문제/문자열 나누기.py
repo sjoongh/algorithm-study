@@ -36,33 +36,17 @@
 # 그러므로 answer를 먼저 +1 한 상태에서 isx, isnotx를 계산해도 결과는 달라지지 않는다.
 # TODO : 문제를 풀이할때 정말 이해가 가지 않는다면 손으로 직접 그려보고 풀이하는 습관을 들여보자!!
 
-# TODO : 다시 풀어볼것
+def solution(s):
+    answer = 0
+    cnt1, cnt2 = 0, 0
+    for i in s:
+        if cnt1 == cnt2:
+            answer += 1
+            x = i
+        if x == i:
+            cnt1 += 1
+        else:
+            cnt2 += 1
+    return answer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# =================================================================================
-# def solution(s):
-#     answer = 0
-#     cnt1=0; cnt2=0
-#     for i in s:
-#         if cnt1==cnt2:
-#             answer+=1
-#             k=i
-#         if k==i:
-#             cnt1+=1
-#         else:
-#             cnt2+=1
-#
-#     return answer
+print(solution("aaabbaccccabba"))

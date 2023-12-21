@@ -24,4 +24,25 @@
 # 지문과 같습니다.
 #
 # 입출력 예 #2
-# 설명 생략
+# banana
+
+def solution(s):
+    answer = []
+    for i in range(len(s)):
+        if s[i] in  s[0:i]:
+            answer.append(i - s[0:i].rindex(s[i]))
+        else:
+            answer.append(-1)
+    return answer
+
+
+# def solution(s):
+#     answer = []
+#     for i in range(len(s)):
+#         if s[i] in s[0:i]:
+#             answer.append(i - s[0:i].rindex(s[i]))
+#         else:
+#             answer.append(-1)
+#     return answer
+
+print(solution("banana"))
