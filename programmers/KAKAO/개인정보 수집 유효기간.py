@@ -76,6 +76,11 @@ def solution(today, terms, privacies):
     test = datetime.date(int(today_date[0]), int(today_date[1]), int(today_date[2]))
     for i in privacies:
         tess2 = i.split(" ")
+        # print(tess2[1])
+        # print(str(terms))
+        print(str(terms)[str(terms).find(tess2[1])])
+        print(str(terms).find(tess2[1]))
+        # print(terms.find(tess2[1]))
         # terms 도 split해서 알파벳과 일치하는 유효기간 정보를 빼냄
 
         # 빼낸 유효기간을 기준으로 test에 더해주고 tess2의 유효기간보다 작다면? -> 보관

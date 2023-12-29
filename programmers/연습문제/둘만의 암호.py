@@ -20,28 +20,23 @@
 # 입출력 예 설명
 # 입출력 예 #1
 # 본문 내용과 일치합니다.
+# TODO 다시풀긔
 
-def solution(s, skip, index):
-    answer = ''
-    position = 0
-    for i in s:
-        count = 0
-        position = ord(i)
-        for j in range(index):
-            position += 1
-            if chr(position) in skip:
-                count += 1
-            else:
-                continue
-        if ord(i) + index > 122:
-            position = 96 + (chr(i) + index - 122)
-            print(position)
-            answer += chr(position)
-        else:
-            test = position + count
-            answer += chr(test)
+# def solution(s, skip, index):
+#     answer = ''
+#     for i in range(len(s)):
+#         askii = ord(s[i])
+#         count = 0
+#         while True:
+#             askii += 1
+#             if askii > 122:
+#                 askii = 97
+#             if chr(askii) not in skip:
+#                 count += 1
+#             if count == index:
+#                 answer += chr(askii)
+#                 break
+#     return answer
 
-    return answer
-
-print(solution("aukks", "wbgd", 5))
+print(solution("aukks", "wbqd", 5))
 

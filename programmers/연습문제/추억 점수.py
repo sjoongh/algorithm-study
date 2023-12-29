@@ -51,13 +51,14 @@ z = zip(name, price)
 # 다음과 같이도 가능
 # 아이스크림3 = dict([("메로나", 500), ("구구콘", 1000)])
 
-# def solution(name, yearning, photo):
-#     answer = []
-#     두 개의 서로 다른 리스트에서 하나를 key로 하고 다른 하나를 value로 해서 딕셔너리로 표현할때 dict와 zip을 함께 사용
-#     mix_text = dict(zip(name, yearning))
-#     for j in photo:
-#         count = 0
-#         for k in j:
-#             count += mix_text.get(k, 0)
-#         answer.append(count)
-#     return answer
+def solution(name, yearning, photo):
+    answer = []
+    #     두 개의 서로 다른 리스트에서 하나를 key로 하고 다른 하나를 value로 해서 딕셔너리로 표현할때 dict와 zip을 함께 사용
+    mix_text = dict(zip(name, yearning))
+    for j in photo:
+        count = 0
+        for k in j:
+            #             get의 default 값은 None이므로 0으로 지정해서 count를 쉽게 만듬
+            count += mix_text.get(k, 0)
+        answer.append(count)
+    return answer
