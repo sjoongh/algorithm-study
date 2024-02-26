@@ -27,13 +27,17 @@ def solution(babbling):
     for word in babbling:
         for i in vowels:
             if i in word:
-                if i*2 in word:
-                    continue
-                else:
-                    word = word.replace(i, '')
-        if not word:
+                if i*2 not in word:
+                    # word = word.replace(i, '')
+                    word = word.replace(i, ' ')
+        # if not word:
+        if word.isspace():
             cnt += 1
     return cnt
 
+# 처음에는 주석처럼 풀었는데 자꾸 테스트케이스에서 몇개를 통과를 못했다.
+# 이유가 뭔지 궁금해 죽겠었는데 아무리 생각해도 틀릴 이유가없었다.
+# 그러다 문득 화이트스페이스 때문인가?.. 라는 생각이 들어 공백을 테스트 케이스로 넣고 테스트 해본 결과 역시나.. 주석을 친 코드에서는 잡아내지 못했다.
+# isspace()를 활용해서 화이트 스페이스가 들어간 테스트 케이스 예제까지 잡고 나서야 이해가 됐다. 좋은 시도였다
 
 print(solution(["mamaayaye"]))
